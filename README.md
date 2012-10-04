@@ -1,9 +1,20 @@
 trools: A test framework for rules engines in Java.
 ======
 
-The primary goal of this project is to make writing unit tests for rules simpler.
-
 Authored and maintained by Daniel Akiva and Derek Abdine (derek abdine <at> gmail dot com).
+
+Why trools?
+======
+
+The primary goal of this project is to make writing unit tests for rules simpler. We to have a framework that focuses on quickly bringing test cases online without having to mess with boilerplate code for configuring a rules environment.
+
+Alternatives
+======
+
+Some rules engines have been integrated with Spring. A similar approach to what trools provides can be exposed by working with Spring's support for JSR-94 and specific rule engine implementations. Trools was designed to be spring-agnostic.
+
+Quick start
+======
 
 Here's a quick start example test case:
 
