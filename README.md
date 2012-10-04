@@ -62,7 +62,7 @@ OR create a trools-powered *stateful* rule session test case:
         private StatefulRuleSession m_ruleSession;
     }
 
-That's it. Run the test cases and you should see results :)
+That's it. Run the test cases and you should see results :) For more interesting test cases, try combining mockito mock objects with trools test cases by passing the mock objects to the StatefulRuleSession#addObject(Object) or StatelessRuleSession#executeRules(List) methods, which can then be used by your rules and verified in the unit test methods. 
 
 Contributing
 ======
