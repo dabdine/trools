@@ -65,8 +65,9 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	// @RuleContext annotation.
 	Map vendorProps = new HashMap();
 	if (!"".equals(ruleContextAnnotation.vendorPropsURI())) {
-	    try (Reader propReader = new FileReader(
-		    ruleContextAnnotation.vendorPropsURI());) {
+	    Reader propReader = new FileReader(
+		    ruleContextAnnotation.vendorPropsURI());
+	    try {
 		Properties properties = new Properties();
 		properties.load(propReader);
 		for (String keyName : properties.stringPropertyNames()) {
@@ -75,6 +76,8 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	    } catch (Exception e) {
 		throw new IllegalArgumentException(
 			"Could not load vendor properties file", e);
+	    } finally {
+		propReader.close();
 	    }
 	}
 
@@ -83,8 +86,9 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	    // Create the rule execution set
 	    RuleResourceProvider resourceProvider = ruleContextAnnotation
 		    .resourceProvider().newInstance();
-	    try (Reader resourceReader = resourceProvider
-		    .getReader(ruleContextAnnotation.resourceURI());) {
+	    Reader resourceReader = resourceProvider
+		    .getReader(ruleContextAnnotation.resourceURI());
+	    try {
 		RuleExecutionSet executionSet = ruleAdministrator
 			.getLocalRuleExecutionSetProvider(vendorProps)
 			.createRuleExecutionSet(resourceReader, vendorProps);
@@ -96,6 +100,8 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	    } catch (Exception e) {
 		throw new IllegalArgumentException(
 			"Could not load rules resource", e);
+	    } finally {
+		resourceReader.close();
 	    }
 	} catch (Exception e) {
 	    throw new IllegalArgumentException(

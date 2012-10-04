@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <groupId>org.rapid7</groupId>
-   <artifactId>RulesEngineTest</artifactId>
+   <groupId>org.rapid7.trools</groupId>
+   <artifactId>trools</artifactId>
    <packaging>jar</packaging>
    <version>1.0-SNAPSHOT</version>
-   <name>RulesEngineTest</name>
+   <name>trools</name>
    <url>http://www.rapid7.com</url>
 
    <dependencies>
@@ -20,6 +20,19 @@
          <version>4.10</version>
       </dependency>
    </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>1.6</source>
+               <target>1.6</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
    <repositories>
       <repository>
