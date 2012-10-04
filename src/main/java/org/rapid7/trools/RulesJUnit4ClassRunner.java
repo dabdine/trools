@@ -48,7 +48,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	Object testObject = super.createTest();
 	Class<? extends Object> klass = testObject.getClass();
 
-	// First process top-level RuleExcutionSet annotations on the class.
+	// First process top-level RuleContext annotations on the class.
 	RuleContext ruleContextAnnotation = klass
 		.getAnnotation(RuleContext.class);
 	if (ruleContextAnnotation == null)
@@ -61,7 +61,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	RuleAdministrator ruleAdministrator = serviceProvider
 		.getRuleAdministrator();
 
-	// First try to preload all the vendor properties as specified in the
+	// Then try to preload all the vendor properties as specified in the
 	// @RuleContext annotation.
 	Map vendorProps = new HashMap();
 	if (!"".equals(ruleContextAnnotation.vendorPropsURI())) {
@@ -81,7 +81,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 	    }
 	}
 
-	// parse the rule set
+	// Now parse the rule set
 	try {
 	    // Create the rule execution set
 	    RuleResourceProvider resourceProvider = ruleContextAnnotation
@@ -108,7 +108,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 		    "Failed to initialize rules engine", e);
 	}
 
-	// Now find the method @InjectRuleSession annotation and inject the rule
+	// Finally, find the method @InjectRuleSession annotation and inject the rule
 	// session.
 	boolean processedInjectField = false;
 	for (Field field : klass.getDeclaredFields()) {
