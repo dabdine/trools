@@ -18,8 +18,8 @@ Quick start
 
 Below are a couple examples to help you get started. Keep in mind that the test logic has not changed between the examples -- only the test class configuration (by way of annotations) and the rule language has changed.
 
-Jess
-------
+Jess (https://github.com/dabdine/trools-examples-jess)
+------ 
 Create your rules file:
 
 	(defclass Person org.rapid7.trools.jess.example.fact.Person static)
@@ -75,7 +75,7 @@ OR create a trools-powered *stateful* rule session test case:
         private StatefulRuleSession m_ruleSession;
     }
 
-Drools
+Drools (https://github.com/dabdine/trools-examples-drools)
 ------
 Create your rules file:
 
