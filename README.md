@@ -1,4 +1,4 @@
-trools: A test framework for rules engines in Java.
+trools: A test framework for rules.
 ======
 
 Authored and maintained by Daniel Akiva and Derek Abdine (derek abdine <at> gmail dot com).
