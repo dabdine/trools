@@ -1,9 +1,9 @@
 trools: A test framework for rules engines in Java.
 ======
 
-The goal of this project is to allow testing of rules agnostic of any rules implementation by way of JSR-94. This allows for tests which test the inputs and outputs of rules, independent of the file format or technologies which represent those rules.
+The primary goal of this project is to make writing unit tests for rules simpler.
 
-Authored and maintained by Derek Abdine (derek abdine <at> gmail dot com) and Daniel Akiva.
+Authored and maintained by Daniel Akiva and Derek Abdine (derek abdine <at> gmail dot com).
 
 Here's a quick start example test case:
 
@@ -61,7 +61,9 @@ OR create a trools-powered *stateful* rule session test case:
         @InjectRuleSession
         private StatefulRuleSession m_ruleSession;
     }
-	
+
+That's it. Run the test cases and you should see results :)
+
 Contributing
 ======
 
