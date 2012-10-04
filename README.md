@@ -3,6 +3,8 @@ trools
 
 A test framework for JSR-94. The aim of this project is to allow testing of rules agnostic of any rules implementation by way of JSR-94.
 
+Authored and maintained by Derek Abdine (derek abdine <at> gmail dot com) and Daniel Akiva.
+
 Here's a quick start example test case:
 
     @RunWith(JessRulesJUnit4ClassRunner.class)
