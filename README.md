@@ -16,10 +16,38 @@ Some rules engines have been integrated with Spring. A similar approach to what 
 Quick start
 ======
 
+Dependencies
+##
+
+Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency configuration would look like:
+
+   <dependencies>
+      <dependency>
+         <groupId>jsr94</groupId>
+         <artifactId>jsr94</artifactId>
+         <version>1.1</version>
+      </dependency>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.10</version>
+      </dependency>
+   </dependencies>
+   <repositories>
+      <repository>
+         <id>thirdparty-releases</id>
+         <name>JBoss Thirdparty Releases</name>
+         <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+      </repository>
+   </repositories>
+
+Examples
+##
+
 Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the jess/drools examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
 
 Jess (https://github.com/dabdine/trools-examples-jess)
------- 
+###
 Create your rules file:
 
 	(defclass Person org.rapid7.trools.jess.example.fact.Person static)
@@ -76,7 +104,7 @@ OR create a trools-powered *stateful* rule session test case:
     }
 
 Drools (https://github.com/dabdine/trools-examples-drools)
-------
+###
 Create your rules file:
 
     package org.rapid7.trools.example; 
