@@ -133,8 +133,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 		} else if (StatelessRuleSession.class.isAssignableFrom(field
 			.getType())) {
 		    type = RuleRuntime.STATELESS_SESSION_TYPE;
-		}
-		if (type == null)
+		} else {
 		    throw new IllegalArgumentException(
 			    "Encountered @"
 				    + InjectRuleSession.class.getName()
@@ -143,6 +142,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 				    + " of type "
 				    + field.getType()
 				    + " which needs to be of either type javax.rules.StatefulRuleSession or javax.rules.StatelessRuleSession");
+		}
 		field.setAccessible(true);
 		field.set(
 			testObject,
