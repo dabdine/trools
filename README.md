@@ -97,7 +97,7 @@ Create a trools-powered *stateless* rule session test case:
     public class StatelessExampleTest {
         @Test
         public void statelessExample() throws InvalidRuleSessionException,
-            RemoteException {
+                RemoteException {
             // when
             List results = m_ruleSession.executeRules(Arrays.asList(new Person().setName("Bill")));
         
@@ -116,7 +116,7 @@ OR create a trools-powered *stateful* rule session test case:
     public class StatefulExampleTest {
         @Test
         public void statefulExample() throws InvalidRuleSessionException,
-            RemoteException {
+                RemoteException {
             // given
             m_ruleSession.addObject(new Person().setName("Bill"));
         
