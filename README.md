@@ -17,7 +17,7 @@ Quick start
 ======
 
 Dependencies
-##
+------
 
 Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency configuration would look like:
 
@@ -42,12 +42,12 @@ Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency 
    </repositories>
 
 Examples
-##
+------
 
 Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the jess/drools examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
 
 Jess (https://github.com/dabdine/trools-examples-jess)
-###
+------ 
 Create your rules file:
 
 	(defclass Person org.rapid7.trools.jess.example.fact.Person static)
@@ -104,7 +104,7 @@ OR create a trools-powered *stateful* rule session test case:
     }
 
 Drools (https://github.com/dabdine/trools-examples-drools)
-###
+------
 Create your rules file:
 
     package org.rapid7.trools.example; 
