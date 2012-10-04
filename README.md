@@ -16,6 +16,8 @@ Some rules engines have been integrated with Spring. A similar approach to what 
 Quick start
 ======
 
+Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the jess/drools examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
+
 Dependencies
 ------
 
@@ -42,11 +44,6 @@ Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency 
       </repository>
    </repositories>
 ```
-
-Examples
-------
-
-Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the jess/drools examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
 
 Jess (https://github.com/dabdine/trools-examples-jess)
 ------ 
