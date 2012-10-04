@@ -13,6 +13,11 @@ Alternatives
 
 Some rules engines have been integrated with Spring. A similar approach to what trools provides can be exposed by working with Spring's support for JSR-94 and specific rule engine implementations. Trools was designed to be spring-agnostic.
 
+Engine support
+======
+
+At the current time, trools supports testing Drools or Jess rules. Extending trools to support other rules engines is a trivial task. Please submit a ticket if you'd like to see support for other JSR-94 rules engines.
+
 Quick start
 ======
 
@@ -21,7 +26,7 @@ Below are a couple examples to help you get started. Keep in mind that **the tes
 Dependencies
 ------
 
-Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency configuration would look like:
+Trools depends on JUnit 4.1+ and the JSR-94 specification, as well as a JSR-94 implementation. The maven dependency configuration would look like:
 
 ```xml
    <dependencies>
