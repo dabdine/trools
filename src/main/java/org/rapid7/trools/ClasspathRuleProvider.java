@@ -3,13 +3,20 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package org.rapid7.rule;
+package org.rapid7.trools;
+
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  *
  * @author Daniel Akiva
  */
-public class JessRulesEngineRunner extends RulesEngineRunner
+public class ClasspathRuleProvider implements IRuleProvider
 {
-
+   @Override
+   public Reader getReader(String resourceURI)
+   {
+      return new InputStreamReader(getClass().getClassLoader().getResourceAsStream(resourceURI));
+   }
 }

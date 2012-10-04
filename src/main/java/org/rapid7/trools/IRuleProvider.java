@@ -3,9 +3,9 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package org.rapid7.rule;
+package org.rapid7.trools;
 
-import java.io.File;
+import java.io.Reader;
 
 /**
  *
@@ -13,7 +13,5 @@ import java.io.File;
  */
 public interface IRuleProvider
 {
-
-   public File getRulesFile();
-
+   public Reader getReader(String resourceURI);
 }

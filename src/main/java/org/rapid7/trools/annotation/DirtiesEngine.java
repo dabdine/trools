@@ -3,7 +3,7 @@
  * All rights reserved. This material contains unpublished, copyrighted
  * work including confidential and proprietary information of Rapid7.
  **************************************************************************/
-package org.rapid7.rule.annotation;
+package org.rapid7.trools.annotation;
 
 /**
  * 
