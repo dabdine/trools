@@ -16,7 +16,9 @@ Some rules engines have been integrated with Spring. A similar approach to what 
 Engine support
 ======
 
-At the current time, trools supports testing Drools or Jess rules. Extending trools to support other rules engines is a trivial task. Please submit a ticket if you'd like to see support for other JSR-94 rules engines.
+Extending trools to support other rules engines is a trivial task. Please submit a ticket if you'd like to see support for other JSR-94 rules engines. The currently supported engines are:
+* Drools
+* Jess
 
 Quick start
 ======
@@ -169,6 +171,8 @@ That's it. Run the test cases and you should see results :) For more interesting
 
 Contributing
 ======
+
+We need support for other rules engines!
 
 When making contributions, please use Java coding standards. If using Eclipse to develop changes, these standards are built in and can be turned on in the Eclipse project Java code style settings configuration page.
 
