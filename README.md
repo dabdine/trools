@@ -16,9 +16,11 @@ Some rules engines have been integrated with Spring. A similar approach to what 
 Quick start
 ======
 
-Here's a quick start example test case:
+Below are a couple examples to help you get started. Keep in mind that the test logic has not changed between the examples -- only the test class configuration (by way of annotations) and the rule language has changed.
 
-Create your rules file (the code below is written in the Jess language):
+Jess
+------
+Create your rules file:
 
 	(defclass Person org.rapid7.trools.jess.example.fact.Person static)
 	
@@ -67,6 +69,64 @@ OR create a trools-powered *stateful* rule session test case:
             List results = m_ruleSession.getObjects(new ClassTypeObjectFilter(
                 String.class));
             assertEquals("hello world", results.get(0));
+        }
+    
+        @InjectRuleSession
+        private StatefulRuleSession m_ruleSession;
+    }
+
+Drools
+------
+Create your rules file:
+
+    package org.rapid7.trools.example; 
+    import org.rapid7.trools.example.Person;
+    
+    rule "simple-test"
+        when 
+            p : Person ( name == "Bill" )  
+        then 
+            retract(p);
+            insert(new String("hello world"));
+    end
+
+Create a trools-powered *stateless* rule session test case:
+
+    @RunWith(DroolsJUnit4ClassRunner.class)
+    @RuleContext(resourceURI = "org/rapid7/trools/drools/example/simple-test.drl")
+    public class StatelessExampleTest {
+        @Test
+        public void statelessExample() throws InvalidRuleSessionException,
+            RemoteException {
+        // when
+        List results = m_ruleSession.executeRules(Arrays.asList(new Person().setName("Bill")));
+    
+        // then
+        assertEquals("hello world", results.get(0));
+        }
+    
+        @InjectRuleSession
+        private StatelessRuleSession m_ruleSession;
+    }
+
+OR create a trools-powered *stateful* rule session test case:
+
+    @RunWith(DroolsJUnit4ClassRunner.class)
+    @RuleContext(resourceURI = "org/rapid7/trools/drools/example/simple-test.drl")
+    public class StatefulExampleTest {
+        @Test
+        public void statefulExample() throws InvalidRuleSessionException,
+            RemoteException {
+        // given
+        m_ruleSession.addObject(new Person().setName("Bill"));
+    
+        // when
+        m_ruleSession.executeRules();
+    
+        // then
+        List results = m_ruleSession.getObjects(new ClassTypeObjectFilter(
+            String.class));
+        assertEquals("hello world", results.get(0));
         }
     
         @InjectRuleSession
