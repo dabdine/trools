@@ -1,5 +1,6 @@
 package org.rapid7.trools;
 
+import java.io.IOException;
 import java.io.Reader;
 
 /**
@@ -17,6 +18,9 @@ public interface RuleResourceProvider {
      *
      * @return A reader. The caller is responsible for closing the reader
      *         returned by this method.
+     *
+     * @throws IOException
+     *             If the resource could not be loaded.
      */
-    public Reader getReader(String resourceURI);
+    public Reader getReader(String resourceURI) throws IOException;
 }

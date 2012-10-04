@@ -1,5 +1,7 @@
 package org.rapid7.trools;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
@@ -10,8 +12,10 @@ import java.io.Reader;
  */
 public class ClasspathRuleResourceProvider implements RuleResourceProvider {
     @Override
-    public Reader getReader(String resourceURI) {
-	return new InputStreamReader(getClass().getClassLoader()
-		.getResourceAsStream(resourceURI));
+    public Reader getReader(String resourceURI) throws IOException {
+	InputStream inStream = getClass().getClassLoader().getResourceAsStream(resourceURI);
+	if (inStream == null)
+	    throw new IOException("The resource \"" + resourceURI + "\" could not be loaded.");
+	return new InputStreamReader(inStream);
     }
 }
