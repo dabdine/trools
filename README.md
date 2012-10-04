@@ -21,6 +21,7 @@ Dependencies
 
 Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency configuration would look like:
 
+<code>
    <dependencies>
       <dependency>
          <groupId>jsr94</groupId>
@@ -40,6 +41,7 @@ Trools depends on JUnit 4.1+ and the JSR-94 specification. The maven dependency 
          <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
       </repository>
    </repositories>
+</code>
 
 Examples
 ------
