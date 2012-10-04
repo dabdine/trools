@@ -6,7 +6,7 @@ Authored and maintained by Daniel Akiva and Derek Abdine (derek abdine <at> gmai
 Why trools?
 ======
 
-The primary goal is to build a framework that focuses on quickly bringing test cases online without having to mess with boilerplate code for configuring a rules environment.
+The primary goal is to build a framework that focuses on quickly bringing test cases online without having to mess with boilerplate code for configuring a rules environment. We want to be able to write tests that are portable between rules engines so that migrating from one engine to another without breaking rules can be done with confidence.
 
 Alternatives
 ======
