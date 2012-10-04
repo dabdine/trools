@@ -98,11 +98,11 @@ Create a trools-powered *stateless* rule session test case:
         @Test
         public void statelessExample() throws InvalidRuleSessionException,
             RemoteException {
-        // when
-        List results = m_ruleSession.executeRules(Arrays.asList(new Person().setName("Bill")));
-    
-        // then
-        assertEquals("hello world", results.get(0));
+            // when
+            List results = m_ruleSession.executeRules(Arrays.asList(new Person().setName("Bill")));
+        
+            // then
+            assertEquals("hello world", results.get(0));
         }
     
         @InjectRuleSession
@@ -117,16 +117,16 @@ OR create a trools-powered *stateful* rule session test case:
         @Test
         public void statefulExample() throws InvalidRuleSessionException,
             RemoteException {
-        // given
-        m_ruleSession.addObject(new Person().setName("Bill"));
-    
-        // when
-        m_ruleSession.executeRules();
-    
-        // then
-        List results = m_ruleSession.getObjects(new ClassTypeObjectFilter(
-            String.class));
-        assertEquals("hello world", results.get(0));
+            // given
+            m_ruleSession.addObject(new Person().setName("Bill"));
+        
+            // when
+            m_ruleSession.executeRules();
+        
+            // then
+            List results = m_ruleSession.getObjects(new ClassTypeObjectFilter(
+                String.class));
+            assertEquals("hello world", results.get(0));
         }
     
         @InjectRuleSession
