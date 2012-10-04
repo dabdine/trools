@@ -16,7 +16,7 @@ Some rules engines have been integrated with Spring. A similar approach to what 
 Quick start
 ======
 
-Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
+Below are a couple examples to help you get started. Keep in mind that **the test logic has not changed between the jess/drools examples** -- only the test class configuration (by way of annotations) and the rule language has changed.
 
 Jess (https://github.com/dabdine/trools-examples-jess)
 ------ 
