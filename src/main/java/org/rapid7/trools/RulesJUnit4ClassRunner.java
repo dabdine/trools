@@ -110,11 +110,11 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 
 	// Now find the method @InjectRuleSession annotation and inject the rule
 	// session.
-	boolean processedInectField = false;
+	boolean processedInjectField = false;
 	for (Field field : klass.getDeclaredFields()) {
 	    if (field.getAnnotation(InjectRuleSession.class) != null) {
 		// Check to see if we are encountering a duplicate field...
-		if (processedInectField) {
+		if (processedInjectField) {
 		    throw new IllegalArgumentException("Only one @"
 			    + InjectRuleSession.class.getName()
 			    + " annotation can exist");
@@ -122,7 +122,7 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 
 		// Set the flag just in case we trip over another field that is
 		// annotated.
-		processedInectField = true;
+		processedInjectField = true;
 
 		// Inject into the field. We will inspect the annotated field
 		// and inject a stateful/stateless rules session
