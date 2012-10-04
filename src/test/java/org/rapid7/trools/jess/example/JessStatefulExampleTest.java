@@ -18,8 +18,7 @@ import org.rapid7.trools.support.ClassTypeObjectFilter;
  * StatefulRulesSession.
  *
  * @author Derek Abdine
- * @see <a href="http://www.jessrules.com/docs/71/jsr94.html">The Jess JSR94
- *      documentation</a>
+ * @see <a href="http://www.jessrules.com/docs/71/jsr94.html">The Jess JSR94 documentation</a>
  */
 @RunWith(JessRulesJUnit4ClassRunner.class)
 @RuleContext(resourceURI = "org/rapid7/trools/jess/example/simple-test.clp")
