@@ -77,7 +77,10 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 		throw new IllegalArgumentException(
 			"Could not load vendor properties file", e);
 	    } finally {
-		propReader.close();
+		try {
+		    propReader.close();
+		} catch (Exception e) {
+		}
 	    }
 	}
 
@@ -101,15 +104,18 @@ public abstract class RulesJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 		throw new IllegalArgumentException(
 			"Could not load rules resource", e);
 	    } finally {
-		resourceReader.close();
+		try {
+		    resourceReader.close();
+		} catch (Exception e) {
+		}
 	    }
 	} catch (Exception e) {
 	    throw new IllegalArgumentException(
 		    "Failed to initialize rules engine", e);
 	}
 
-	// Finally, find the method @InjectRuleSession annotation and inject the rule
-	// session.
+	// Finally, find the method @InjectRuleSession annotation and inject the
+	// rule session.
 	boolean processedInjectField = false;
 	for (Field field : klass.getDeclaredFields()) {
 	    if (field.getAnnotation(InjectRuleSession.class) != null) {
