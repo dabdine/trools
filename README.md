@@ -28,28 +28,17 @@ Below are a couple examples to help you get started. Keep in mind that **the tes
 Dependencies
 ------
 
-Trools depends on JUnit 4.1+ and the JSR-94 specification, as well as a JSR-94 implementation. The maven dependency configuration would look like:
+Trools depends on JUnit 4.1+ and the JSR-94 specification, as well as a plugin JSR-94 implementation (aka rules engine). As of October 17th 2013, trools is an official Sonatype OSS project and is synchronized with the Maven central repository. The maven dependency configuration would look like:
 
 ```xml
    <dependencies>
       <dependency>
-         <groupId>jsr94</groupId>
-         <artifactId>jsr94</artifactId>
-         <version>1.1</version>
-      </dependency>
-      <dependency>
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>4.10</version>
+         <groupId>com.rapid7.trools</groupId>
+         <artifactId>trools-core</artifactId>
+         <version>1.0</version>
+         <scope>test</scope>
       </dependency>
    </dependencies>
-   <repositories>
-      <repository>
-         <id>thirdparty-releases</id>
-         <name>JBoss Thirdparty Releases</name>
-         <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
-      </repository>
-   </repositories>
 ```
 
 Jess (https://github.com/dabdine/trools-examples-jess)
