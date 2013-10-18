@@ -3,7 +3,7 @@
    <groupId>com.rapid7</groupId>
    <artifactId>trools</artifactId>
    <packaging>jar</packaging>
-   <version>1.0-SNAPSHOT</version>
+   <version>1.0</version>
    <name>trools</name>
    <url>https://github.com/dabdine/trools</url>
 
