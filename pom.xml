@@ -30,9 +30,9 @@
    </developers>
 
    <scm>
-      <connection>scm:git:git@github.com:dabdine/trools.git</connection>
-      <developerConnection>scm:git:git@github.com:dabdine/trools.git</developerConnection>
-      <url>git@github.com:dabdine/trools.git</url>
+      <connection>scm:git:https://github.com/dabdine/trools</connection>
+      <developerConnection>scm:git:https://github.com/dabdine/trools</developerConnection>
+      <url>https://github.com/dabdine/trools</url>
    </scm>
 
    <dependencies>
