@@ -1,4 +1,4 @@
-trools: A test framework for rules.
+trools: A test framework for rules.  [![Build Status](https://travis-ci.org/dabdine/trools.png?branch=master)](https://travis-ci.org/dabdine/trools)
 ======
 
 Authored and maintained by Daniel Akiva and Derek Abdine (derek abdine <at> gmail dot com).
